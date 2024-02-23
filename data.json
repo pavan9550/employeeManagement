@@ -1,0 +1,26 @@
+{
+    "posts": [
+      {
+        "id" :1,
+        "prodid":101,
+        "title": "java",
+        "author": "oracle"
+      },
+      {
+        "id" :1,
+        "prodid":102,      
+        "title": "java",
+        "author": "oracle"
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+      }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }

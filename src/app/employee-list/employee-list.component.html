@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee List</title>
+  </head>
+  <body>
+    <h2>Employee List</h2>
+    <label>Filter By : </label><br />
+    <input
+      type="text"
+      id="filter"
+      (input)="search($event)"
+      placeholder="Search by Name"
+    />
+
+    <div>
+      <label for="count">Total Number of Employees : </label>
+      <span id="count">{{ filteredList.length }}</span>
+    </div>
+
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>Emp ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of filteredList">
+          <td>
+            <a
+              [routerLink]="['/EmployeeDetails']"
+              [queryParams]="{'id':emp.id}"
+              >{{ emp.id }}</a
+            >
+          </td>
+          <td id="name{{ emp.id }}">{{ emp.name }}</td>
+          <td id="loc{{ emp.id }}">{{ emp.location }}</td>
+          <td id="email{{ emp.id }}">{{ emp.email }}</td>
+          <td id="mob{{ emp.id }}">{{ emp.mobile }}</td>
+          <td>
+            <button class="edit" (click)="onEdit(emp)">Edit{{ emp.id }}</button>
+          </td>
+          <td>
+            <button class="delete" (click)="onDelete(emp.id)">
+              Delete{{ emp.id }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

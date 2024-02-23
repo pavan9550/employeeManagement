@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+</head>
+<body>
+
+    <div class="employee-details">
+        <h2>Employee Details</h2>
+        <p id="id"><strong>ID:</strong>{{employee.id}}</p>
+        <p id="name"><strong>Name:</strong>{{employee.name}}</p>
+        <p id="location"><strong>Location:</strong>{{employee.location}}</p>
+        <p id="email"><strong>Email:</strong>{{employee.email}}</p>
+        <p id="mobile"><strong>Phone:</strong>{{employee.mobile}}</p>
+
+        <button id="back" (click)="backToEmpList()" class="back-button">Back to Employee List</button>
+    </div>
+
+</body>
+</html>
